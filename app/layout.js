@@ -1,15 +1,7 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import Sidebar from "@/layout/Sidebar";
+import Navbar from "../layout/Navbar";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -19,10 +11,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        />
+      </head>
+      <body className="flex flex-col h-screen overflow-auto">
+        <Navbar />
+        <div className="flex-1 relative bg-[#dfe2e8]">
+          <Sidebar />
+          <div className="ml-[15%] bg-[#e7e9e7] h-full">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );

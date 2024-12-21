@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center h-full" role="alert">
-        <Rabbit className="w-56 h-56 text-[#002052]"/>
-      <h1 className="text-4xl font-bold mb-4 text-[#002052]">404 - Page Not Found</h1>
+    <div className="flex flex-col items-center justify-center h-full p-4 text-center" role="alert">
+      <Rabbit className="w-32 h-32 md:w-56 md:h-56 text-[#002052]" />
+      <h1 className="text-2xl md:text-4xl font-bold mb-4 text-[#002052]">404 - Page Not Found</h1>
       <p className="text-gray-600 mb-6">
         Sorry, the page you're looking for either doesn't exist or is still under construction.
       </p>

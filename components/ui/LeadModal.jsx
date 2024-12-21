@@ -17,7 +17,7 @@ export function Modal({ lead, onClose }) {
     return (
         <div onClick={handleBgClick} className="fixed z-30 inset-0 bg-black bg-opacity-20 flex items-center justify-center overflow-auto" role="dialog" aria-modal="true">
             <div className="w-full !max-w-3xl shadow-lg bg-gradient-to-r from-blue-500 via-[#b1d6f0] to-purple-500 p-[2px] rounded-[18px]">
-                <div className="rounded-2xl p-6 bg-white relative max-h-[90vh] overflow-y-auto">
+                <div className="rounded-2xl p-6 bg-white relative max-h-[90vh] md:max-h-screen overflow-y-auto">
                     <div className="flex items-center justify-between">
                         <div className='flex items-center gap-1'>
                             {lead.type === "mail" && <MailPlus className='w-4 h-4 text-[#3e3d3d]' title="Mail" />}
@@ -62,7 +62,7 @@ export function Modal({ lead, onClose }) {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-4 shadow-lg p-2 m-3 rounded-lg bg-white">
+                    <div className="flex flex-col gap-4 shadow-lg p-2 md:m-3 my-3 rounded-lg bg-white">
                         <div className="p-3 text-sm rounded-lg bg-gradient-to-r from-[#b1d6f020] via-[#b1d6f050] to-[#b1d6f020]">
                             <p className="mb-2">
                                 <strong>Why I picked this lead:</strong>
@@ -106,7 +106,7 @@ export function Modal({ lead, onClose }) {
                             </div>
                         </div>
                     </div>
-                    <div className="bg-white rounded-lg p-3 shadow-lg mx-3">
+                    <div className="bg-white rounded-lg p-3 shadow-lg md:mx-3">
                         <p className="text-sm font-bold text-[#3e3d3d]">About {lead.name}</p>
                         <p className="text-sm text-gray-600">{lead.about}</p>
                     </div>

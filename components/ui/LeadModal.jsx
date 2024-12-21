@@ -15,9 +15,9 @@ export function Modal({ lead, onClose }) {
     }
 
     return (
-        <div onClick={handleBgClick} className="fixed z-30 inset-0 bg-black bg-opacity-20 flex items-center justify-center" role="dialog" aria-modal="true">
-            <div className="w-full !max-w-3xl shadow-lg bg-gradient-to-r from-blue-500 via-[#b1d6f0] to-purple-500 p-[2px] rounded-[18px] overflow-auto">
-                <div className="rounded-2xl p-6 bg-white relative">
+        <div onClick={handleBgClick} className="fixed z-30 inset-0 bg-black bg-opacity-20 flex items-center justify-center overflow-auto" role="dialog" aria-modal="true">
+            <div className="w-full !max-w-3xl shadow-lg bg-gradient-to-r from-blue-500 via-[#b1d6f0] to-purple-500 p-[2px] rounded-[18px]">
+                <div className="rounded-2xl p-6 bg-white relative max-h-[90vh] overflow-y-auto">
                     <div className="flex items-center justify-between">
                         <div className='flex items-center gap-1'>
                             {lead.type === "mail" && <MailPlus className='w-4 h-4 text-[#3e3d3d]' title="Mail" />}
@@ -72,7 +72,7 @@ export function Modal({ lead, onClose }) {
                                     <li key={index}>{reason}</li>
                                 ))}
                             </ul>
-                            <div className="grid grid-cols-3 gap-4">
+                            <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
                                 <div className="px-3 py-2 bg-white rounded-lg border shadow-md flex items-center gap-2" title="Decision maker">
                                     <CircleCheckBig className="w-12 h-12 text-[#9434a4]" fill="#673ab730" />
                                     <div>

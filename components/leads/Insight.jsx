@@ -16,13 +16,13 @@ const Insight = () => {
         { label: "Qualified", value: 5 },
     ];
     return (
-        <div className="rounded-[10px] shadow-xl bg-gradient-to-r from-blue-500 via-[#b1d6f0] to-purple-500 p-[2px]">
-            <div className="p-6 w-full h-full border-4 border-transparent rounded-lg bg-clip-border bg-white">
+        <div className="rounded-[10px] shadow-xl bg-gradient-to-r from-blue-500 via-[#b1d6f0] to-purple-500 p-[2px] mt-4">
+            <div className="md:p-6 p-4 w-full h-full border-4 border-transparent rounded-lg bg-clip-border bg-white">
                 <div className='flex gap-1'>
                     <Progress userName={user} progress={progress} goal={goal} metrics={metrics} totalLead={totalLead} />
-                    <ChevronDown className='w-4 h-4 text-[#3b3b3b] hover:text-[#325ac5]' />
+                    <ChevronDown className='w-4 h-4 text-[#3b3b3b] hover:text-[#325ac5] hidden md:block' />
                 </div>
-                <div className='flex mt-4'>
+                <div className='flex flex-col md:flex-row mt-4 md:gap-0 gap-6'>
                     <InsightCarousel />
                     <KeyActivities />
                 </div>

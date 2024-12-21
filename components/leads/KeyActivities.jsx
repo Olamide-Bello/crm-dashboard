@@ -4,8 +4,8 @@ import React from 'react'
 
 const KeyActivities = () => {
     return (
-        <div className='flex flex-col w-[35%] pl-4 gap-4'>
-            <p className="text-gray-600 font-medium mb-4">
+        <div className='flex flex-col w-full md:w-[50%] lg:w-[35%] md:pl-4 gap-4'>
+            <p className="text-gray-600 font-medium md:mb-4">
                 Other key activities
             </p>
             <div className='px-3 py-2 border rounded-lg'>

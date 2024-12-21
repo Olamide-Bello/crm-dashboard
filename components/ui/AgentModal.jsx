@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Copilot from "@/public/icons/copilot.svg"
 import Outlook from "@/public/icons/outlook.svg"
+import { FileClock, Files, FileText, ListMinus, Sailboat, UserRound } from "lucide-react";
 
 export function AgentModal({ onClose }) {
     const [isEmailAccessEnabled, setEmailAccessEnabled] = useState(false);
@@ -22,8 +23,8 @@ export function AgentModal({ onClose }) {
     }
 
     return (
-        <div onClick={handleBgClick} className="fixed z-20 inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-            <div className="bg-white rounded-lg p-6 w-[45%] shadow-lg relative">
+        <div onClick={handleBgClick} className="fixed z-40 inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+            <div className="bg-white rounded-lg p-6 w-full max-w-3xl shadow-lg relative">
                 <button
                     onClick={onClose}
                     className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
@@ -35,16 +36,16 @@ export function AgentModal({ onClose }) {
                     <p className="text-base font-bold">Agent skill</p>
                 </div>
                 <div className="bg-white shadow-md p-4 rounded-lg border my-4">
-                    <p className="mb-4 text-gray-700">
+                    <p className="mb-4 text-gray-700 font-bold">
                         Check if on-hand inventory will allow all sales orders to ship without delay
                     </p>
                     <p className="text-gray-700 text-sm leading-6">
-                        When <span className="font-medium text-blue-600 bg-blue-100 rounded-xl px-2">any vendor</span> sends an email with changes to{" "}
-                        <span className="font-medium text-blue-600 bg-blue-100 rounded-xl px-2">confirmed purchase orders</span>, check if the resulting{" "}
-                        <span className="font-medium text-blue-600 bg-blue-100 rounded-xl px-2">on-hand inventory</span> will allow{" "}
-                        <span className="font-medium text-blue-600 bg-blue-100 rounded-xl px-2">all sales orders</span> to{" "}
-                        <span className="font-medium text-blue-600 bg-blue-100 rounded-xl px-2">ship without delay</span>. If so,{" "}
-                        <span className="font-medium text-blue-600 bg-blue-100 rounded-xl px-2">update the purchase order</span> to reflect the change.
+                        When <span className="font-medium text-blue-600 bg-blue-100 rounded-xl px-2 inline-flex items-center gap-1"><UserRound className="w-3 h-3"/> any vendor</span> sends an email with changes to{" "}
+                        <span className="font-medium text-blue-600 bg-blue-100 rounded-xl px-2 inline-flex gap-1 items-center"><FileText className="w-3 h-3"/> confirmed purchase orders</span>, check if the resulting{" "}
+                        <span className="font-medium text-blue-600 bg-blue-100 rounded-xl px-2 inline-flex gap-1 items-center"><ListMinus className="w-3 h-3"/> on-hand inventory</span> will allow{" "}
+                        <span className="font-medium text-blue-600 bg-blue-100 rounded-xl px-2 inline-flex gap-1 items-center"><Files className="w-3 h-3"/> all sales orders</span> to{" "}
+                        <span className="font-medium text-blue-600 bg-blue-100 rounded-xl px-2 inline-flex gap-1 items-center"><Sailboat className="w-3 h-3"/> ship without delay</span>. If so,{" "}
+                        <span className="font-medium text-blue-600 bg-blue-100 rounded-xl px-2 inline-flex gap-1 items-center"><FileClock className="w-3 h-3"/> update the purchase order</span> to reflect the change.
                     </p>
                 </div>
                 <div className="flex flex-col mb-4">
@@ -70,16 +71,16 @@ export function AgentModal({ onClose }) {
                         Allow access
                     </button>
                 </div>
-                <div className="flex justify-end gap-4">
+                <div className="flex justify-end gap-4 mt-12">
                     <button
                         onClick={handleAllowAccess}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                        className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
                     >
                         Activate
                     </button>
                     <button
                         onClick={onClose}
-                        className="px-4 py-2 bg-gray-300 rounded-lg text-gray-700 hover:bg-gray-400"
+                        className="px-4 py-2 bg-transparent rounded-md border text-gray-700 hover:bg-gray-400"
                     >
                         Close
                     </button>

@@ -7,8 +7,8 @@ const Progress = ({ userName, progress, goal, metrics, lead, totalLead }) => {
     const targetPercentage = (goal / totalLead) * 100;
 
     return (
-        <div className='flex gap-3 flex-1'>
-            <div className="flex items-start flex-wrap  w-1/2">
+        <div className='flex flex-col md:flex-row gap-3 flex-1 w-full'>
+            <div className="flex items-start flex-wrap w-full md:w-1/2">
                 <p className="text-lg text-[#3e3d3d] font-medium ">
                     <span className='w-6 h-6 inline-block'><Copilot className='h-6 w-6' /></span>
                     Hi {userName}, <span className="text-blue-600 inline-block">{progress}%</span> of goal achieved and the
@@ -19,7 +19,7 @@ const Progress = ({ userName, progress, goal, metrics, lead, totalLead }) => {
             </div>
 
             {/* Progress Bar */}
-            <div className="mt-4 flex flex-col gap-2 w-1/2">
+            <div className="mt-4 flex flex-col gap-2 w-full md:w-1/2">
                 <p className="text-sm flex text-[#707070] items-center gap-1">
                     <Clock3 className='w-4 h-4 text-[#707070]'/>
                     <span className="">1 month until Q4 ends</span>
@@ -31,7 +31,7 @@ const Progress = ({ userName, progress, goal, metrics, lead, totalLead }) => {
                         return (
                             <div
                                 key={index}
-                                className={`h-full ${colors[index % colors.length]} first-of-type:rounded-l-full`}
+                                className={`h-full ${colors[index % colors.length]} first-of-type:rounded-l-full max-w-full`}
                                 style={{ width: `${segmentWidth}%` }}
                                 title={`${metric.label}: $${metric.value}m`}
                             ></div>
@@ -51,7 +51,7 @@ const Progress = ({ userName, progress, goal, metrics, lead, totalLead }) => {
                     ></div>
 
                 </div>
-                <div className="flex items-center gap-3 text-xs text-gray-500 mt-2">
+                <div className="flex items-center gap-3 text-xs text-gray-500 mt-2 wrap">
                     {metrics.map((metric, index) => (
                         <div key={index} className='flex items-center gap-2'>
                             <div className={`h-2 w-2 rounded-full ${colors[index % colors.length]}`}></div>

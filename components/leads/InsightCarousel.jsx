@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
-import { leadHighlight } from '@/data'; // Assuming this is an array of leads
-import InsightLeadCard from '../ui/InsightLeadCard'; // Component to display each lead
+import { leadHighlight } from '@/data';
+import InsightLeadCard from '../ui/InsightLeadCard'; 
 import dynamic from "next/dynamic";
 
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
@@ -27,12 +27,12 @@ const InsightCarousel = () => {
     };
 
     return (
-        <div className='flex flex-col w-[65%] pr-4 border-r'>
+        <div className='flex flex-col md:w-[65%] w-full md:pr-4 md:border-r'>
             <p className="text-gray-600 font-medium mb-4">
                 Copilot has pinpointed 20 key leads that show strong purchase intent and are actively engaging. These leads need your focus.
             </p>
 
-            <div className='flex gap-4 overflow-hidden w-[100%]'>
+            <div className='flex md:flex-row flex-col gap-4 w-[100%]'>
                 {leadHighlight.map((lead, index) => (
                     <InsightLeadCard key={index} lead={lead} />
                 ))}

@@ -9,7 +9,7 @@ export function Modal({ lead, onClose }) {
     }
     return (
         <div onClick={handleBgClick} className="fixed z-20 inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-            <div className=" w-[45%] shadow-lg bg-gradient-to-r from-blue-500 via-[#b1d6f0] to-purple-500 p-[2px] rounded-[18px]">
+            <div className="w-full !max-w-3xl shadow-lg bg-gradient-to-r from-blue-500 via-[#b1d6f0] to-purple-500 p-[2px] rounded-[18px] overflow-auto">
                 <div className="rounded-2xl p-6 bg-white relative">
                     <div className="flex items-center justify-between">
                         <div className='flex items-center gap-1'>
@@ -35,21 +35,21 @@ export function Modal({ lead, onClose }) {
                         </div>
                     </div>
                     <div className="flex items-center gap-4 shadow-lg p-3 rounded-lg mt-3">
-                        <div className="p-2 bg-gradient-to-r from-[#b1d6f020] via-[#b1d6f050] to-[#b1d6f020] w-full rounded-lg flex items-center justify-between">
-                            <div className="flex items-center gap-2 flex-1 w-[55%] relative">
-                                <Sparkles className="text-[#9434a4] w-4 h-4" fill="#673ab7" />
-                                <p className="truncate w-[80%]" title={lead.interest}>
+                        <div className="p-2 bg-gradient-to-r from-[#b1d6f020] via-[#b1d6f050] to-[#b1d6f020] w-full rounded-lg flex md:items-center md:flex-row flex-col justify-between">
+                            <div className="flex md:items-center items-start gap-2 flex-1 md:w-[55%] relative">
+                                <Sparkles className="text-[#9434a4] md:w-4 md:h-4 w-8 h-8" fill="#673ab7" />
+                                <p className="md:truncate md:w-[80%]" title={lead.interest}>
                                 {lead.interest}
                                 </p>
                             </div>
                             <div className="flex items-center gap-2">
-                                <button className='flex items-center gap-2 border p-2 h-8 rounded bg-white hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out'>
+                                <button className='flex items-center justify-center gap-2 border p-2 h-8 rounded bg-white hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out w-1/2 md:w-auto'>
                                     <Pencil className='w-4 h-4 text-[#707070]' />
                                     <span className='font-medium text-sm text-[#707070]'>Edit</span>
                                 </button>
-                                <button className='flex items-center gap-2  px-2 py-1 h-8 rounded bg-gradient-to-r from-[#325ac5] to-purple-500 hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out'>
+                                <button className='flex items-center justify-center gap-2  px-2 py-1 h-8 rounded bg-gradient-to-r from-[#325ac5] to-purple-500 hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out w-1/2 md:w-auto'>
                                     <SendHorizonal className='w-4 h-4 text-white' />
-                                    <span className='font-medium text-sm text-white'>Approve and send</span>
+                                    <span className='font-medium text-sm text-white truncate'>Approve and send</span>
                                 </button>
                             </div>
                         </div>
@@ -60,7 +60,7 @@ export function Modal({ lead, onClose }) {
                                 <strong>Why I picked this lead:</strong>
                             </p>
                             <ul className="list-disc list-inside text-gray-700 mb-4">
-                                {lead.reasons.map((reason, index) => (
+                                {lead?.reasons?.map((reason, index) => (
                                     <li key={index}>{reason}</li>
                                 ))}
                             </ul>

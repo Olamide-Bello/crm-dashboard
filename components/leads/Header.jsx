@@ -12,29 +12,29 @@ const Header = () => {
             </div>
             <div className='flex items-center'>
                 <div className='flex items-center gap-4 border-r pr-2'>
-                    <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Show leads chart'>
-                        <ChartLine className='w-4 h-4 text-[#707070]' />
-                        <span className='font-medium text-sm text-[#707070]'>Show chart</span>
+                    <div className='flex items-center gap-1 cursor-pointer hover:text-blue-600 text-[#707070]  rounded' title='Show leads chart'>
+                        <ChartLine className='w-4 h-4' />
+                        <span className='font-medium text-sm'>Show chart</span>
                     </div>
-                    <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Display focused view'>
-                        <List className='w-4 h-4 text-[#707070]' />
-                        <span className='font-medium text-sm text-[#707070]'>Focused view</span>
+                    <div className='flex items-center gap-1 cursor-pointer hover:text-blue-600 text-[#707070] rounded' title='Display focused view'>
+                        <List className='w-4 h-4' />
+                        <span className='font-medium text-sm'>Focused view</span>
                     </div>
-                    <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Add a new lead'>
-                        <Plus className='w-4 h-4 text-[#707070]' />
-                        <span className='font-medium text-sm text-[#707070]'>New</span>
+                    <div className='flex items-center gap-1 cursor-pointer hover:text-blue-600 text-[#707070] rounded' title='Add a new lead'>
+                        <Plus className='w-4 h-4' />
+                        <span className='font-medium text-sm'>New</span>
                     </div>
-                    <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Refresh leads list'>
-                        <RotateCw className='w-4 h-4 text-[#707070]' />
-                        <span className='font-medium text-sm text-[#707070]'>Refresh</span>
+                    <div className='flex items-center gap-1 cursor-pointer hover:text-blue-600 text-[#707070] rounded' title='Refresh leads list'>
+                        <RotateCw className='w-4 h-4' />
+                        <span className='font-medium text-sm'>Refresh</span>
                     </div>
-                    <div className='2xl:flex items-center gap-1 hidden cursor-pointer hover:bg-gray-100 p-1 rounded' title='See collaborations'>
-                        <UsersRound className='w-4 h-4 text-[#707070]' />
-                        <span className='font-medium text-sm text-[#707070]'>Collaboration</span>
+                    <div className='2xl:flex items-center gap-1 hidden cursor-pointer hover:text-blue-600 text-[#707070]  rounded' title='See collaborations'>
+                        <UsersRound className='w-4 h-4' />
+                        <span className='font-medium text-sm'>Collaboration</span>
                     </div>
-                    <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Delete leads list'>
-                        <Trash2 className='w-4 h-4 text-[#707070]' />
-                        <span className='font-medium text-sm text-[#707070]'>Delete</span>
+                    <div className='flex items-center gap-1 cursor-pointer hover:text-blue-600 text-[#707070] rounded' title='Delete leads list'>
+                        <Trash2 className='w-4 h-4' />
+                        <span className='font-medium text-sm'>Delete</span>
                     </div>
                 </div>
                 <div className='flex items-center gap-2 pl-1'>

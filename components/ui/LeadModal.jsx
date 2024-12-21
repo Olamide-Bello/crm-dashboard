@@ -1,14 +1,21 @@
-import { CalendarClock, MailPlus, Pencil, SendHorizonal, Sparkles, User2 } from "lucide-react";
+import { CalendarClock, CircleCheckBig, DiamondPlus, MailPlus, Medal, Pencil, SendHorizonal, Sparkles, ThumbsDown, ThumbsUp, User2 } from "lucide-react";
+import { useState } from "react";
 
 export function Modal({ lead, onClose }) {
+    const [feedback, setFeedback] = useState(null);
 
     const handleBgClick = (e) => {
         if (e.currentTarget === e.target) {
             onClose()
         }
     }
+
+    const handleFeedback = (type) => {
+        setFeedback(type);
+    }
+
     return (
-        <div onClick={handleBgClick} className="fixed z-20 inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+        <div onClick={handleBgClick} className="fixed z-30 inset-0 bg-black bg-opacity-20 flex items-center justify-center">
             <div className="w-full !max-w-3xl shadow-lg bg-gradient-to-r from-blue-500 via-[#b1d6f0] to-purple-500 p-[2px] rounded-[18px] overflow-auto">
                 <div className="rounded-2xl p-6 bg-white relative">
                     <div className="flex items-center justify-between">
@@ -39,7 +46,7 @@ export function Modal({ lead, onClose }) {
                             <div className="flex md:items-center items-start gap-2 flex-1 md:w-[55%] relative">
                                 <Sparkles className="text-[#9434a4] md:w-4 md:h-4 w-8 h-8" fill="#673ab7" />
                                 <p className="md:truncate md:w-[80%]" title={lead.interest}>
-                                {lead.interest}
+                                    {lead.interest}
                                 </p>
                             </div>
                             <div className="flex items-center gap-2">
@@ -64,15 +71,37 @@ export function Modal({ lead, onClose }) {
                                     <li key={index}>{reason}</li>
                                 ))}
                             </ul>
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="px-3 py-2 bg-white rounded-lg">
-                                    <p className="text-sm font-medium text-gray-500">Potential Deal Value</p>
-                                    <p className="text-lg font-bold">${lead.potentialValue}</p>
+                            <div className="grid grid-cols-3 gap-4">
+                                <div className="px-3 py-2 bg-white rounded-lg border shadow-md flex items-center gap-2">
+                                    <CircleCheckBig className="w-12 h-12 text-[#9434a4]" fill="#673ab730" />
+                                    <div>
+                                        <p className="text-sm font-medium text-gray-500">Decision maker</p>
+                                        <p className="text-lg font-bold text-[#9434a4]">Yes</p>
+                                    </div>
                                 </div>
-                                <div className="px-3 py-2 bg-white rounded-lg">
-                                    <p className="text-sm font-medium text-gray-500">Intent</p>
-                                    <p className="text-lg font-bold">{lead.intent}</p>
+                                <div className="px-3 py-2 bg-white rounded-lg border shadow-md flex items-center gap-2">
+                                    <Medal className="w-12 h-12 text-[#9434a4]" fill="#673ab730" />
+                                    <div>
+                                        <p className="text-sm font-medium text-gray-500">Potential Deal Value</p>
+                                        <p className="text-lg font-bold text-[#9434a4]">${lead.potentialValue}</p>
+                                    </div>
                                 </div>
+                                <div className="px-3 py-2 bg-white rounded-lg border shadow-md flex items-center gap-2">
+                                    <DiamondPlus className="w-12 h-12 text-[#9434a4]" fill="#673ab730" />
+                                    <div>
+                                        <p className="text-sm font-medium text-gray-500">Intent</p>
+                                        <p className="text-lg font-bold text-[#9434a4]">{lead.intent}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex items-center justify-end gap-2 mt-4">
+                                <p className="px-1 bg-gray-100 rounded-md border">AI-generated content may be incorrect</p>
+                                <button onClick={() => handleFeedback("thumbs up")} className={`p-1 rounded-full ${feedback === "thumbs up" ? "bg-green-200" : ""}`}>
+                                    <ThumbsUp className="w-4 h-4 text-green-600" />
+                                </button>
+                                <button onClick={() => handleFeedback("thumbs down")} className={`p-1 rounded-full ${feedback === "thumbs down" ? "bg-red-200" : ""}`}>
+                                    <ThumbsDown className="w-4 h-4 text-red-600" />
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -80,6 +109,14 @@ export function Modal({ lead, onClose }) {
                         <p className="text-sm font-bold text-[#3e3d3d]">About {lead.name}</p>
                         <p className="text-sm text-gray-600">{lead.about}</p>
                     </div>
+                    {/* <div className="flex items-center justify-end gap-2 mt-2">
+                        <button onClick={() => handleFeedback("thumbs up")} className={`p-1 rounded-full ${feedback === "thumbs up" ? "bg-green-200" : ""}`}>
+                            <ThumbsUp className="w-4 h-4 text-green-600" />
+                        </button>
+                        <button onClick={() => handleFeedback("thumbs down")} className={`p-1 rounded-full ${feedback === "thumbs down" ? "bg-red-200" : ""}`}>
+                            <ThumbsDown className="w-4 h-4 text-red-600" />
+                        </button>
+                    </div> */}
                 </div>
             </div>
         </div>

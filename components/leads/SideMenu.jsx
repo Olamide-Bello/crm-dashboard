@@ -4,20 +4,20 @@ import { MessageSquare, MessagesSquare, Phone } from 'lucide-react'
 
 const SideMenu = () => {
   return (
-    <div className='w-8 bg-[#dfe2e8] pt-4 md:flex hidden flex-col items-center gap-4 h-full'>
-      <div className=' hover:bg-white cursor-pointer p-1'>
+    <aside className='w-8 bg-[#dfe2e8] pt-4 md:flex hidden flex-col items-center gap-4 h-full' aria-label="Side Menu">
+      <button className='hover:bg-white cursor-pointer p-1' aria-label="Copilot">
         <Copilot className='w-4 h-4 text-black' />
-      </div>
-      <div className=' hover:bg-white cursor-pointer p-1'>
+      </button>
+      <button className='hover:bg-white cursor-pointer p-1' aria-label="Messages">
         <MessagesSquare className='w-4 h-4 text-black'/>
-      </div>
-      <div className=' hover:bg-white cursor-pointer p-1'>
+      </button>
+      <button className='hover:bg-white cursor-pointer p-1' aria-label="Phone">
         <Phone className='w-4 h-4 text-black'/>
-      </div>
-      <div className='hover:bg-white cursor-pointer p-1'>
+      </button>
+      <button className='hover:bg-white cursor-pointer p-1' aria-label="Message">
         <MessageSquare className='w-4 h-4 text-black'/>
-      </div>
-    </div>
+      </button>
+    </aside>
   )
 }
 

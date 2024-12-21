@@ -24,7 +24,7 @@ const Progress = ({ userName, progress, goal, metrics, lead, totalLead }) => {
                     <Clock3 className='w-4 h-4 text-[#707070]'/>
                     <span className="">1 month until Q4 ends</span>
                 </p>
-                <div className="text-sm relative h-2 w-full bg-gray-200 rounded-full flex">
+                <div className="text-sm relative h-2 w-full bg-gray-200 rounded-full flex" role="progressbar" aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">
                     {metrics.map((metric, index) => {
                         const segmentWidth = (metric.value / (totalLead)) * 100;
 

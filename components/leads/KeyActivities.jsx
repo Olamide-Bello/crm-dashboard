@@ -4,7 +4,7 @@ import React from 'react'
 
 const KeyActivities = () => {
     return (
-        <div className='flex flex-col w-full md:w-[50%] lg:w-[35%] md:pl-4 gap-4'>
+        <section className='flex flex-col w-full md:w-[50%] lg:w-[35%] md:pl-4 gap-4'>
             <p className="text-gray-600 font-medium md:mb-4">
                 Other key activities
             </p>
@@ -45,7 +45,7 @@ const KeyActivities = () => {
 
             </div>
             <Link href="/leads/key-activities" className='text-blue-600 text-sm hover:underline'>Show all key activities</Link>
-        </div>
+        </section>
     )
 }
 

@@ -7,14 +7,14 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='flex flex-col md:flex-row h-full'>
+    <main className='flex flex-col md:flex-row h-full'>
         <div className='p-3 flex-1'>
             <Header/>
             <Insight/>
             <LeadsList/>
         </div>
         <SideMenu/>
-    </div>
+    </main>
   )
 }
 

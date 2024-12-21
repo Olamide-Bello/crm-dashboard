@@ -16,7 +16,7 @@ const Insight = () => {
         { label: "Qualified", value: 5 },
     ];
     return (
-        <div className="rounded-[10px] shadow-xl bg-gradient-to-r from-blue-500 via-[#b1d6f0] to-purple-500 p-[2px] mt-4">
+        <section className="rounded-[10px] shadow-xl bg-gradient-to-r from-blue-500 via-[#b1d6f0] to-purple-500 p-[2px] mt-4">
             <div className="md:p-6 p-4 w-full h-full border-4 border-transparent rounded-lg bg-clip-border bg-white">
                 <div className='flex gap-1'>
                     <Progress userName={user} progress={progress} goal={goal} metrics={metrics} totalLead={totalLead} />
@@ -27,7 +27,7 @@ const Insight = () => {
                     <KeyActivities />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

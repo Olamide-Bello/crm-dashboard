@@ -13,7 +13,7 @@ const SidebarItem = ({ url, children }) => {
 
     return (
         <Link href={url}>
-            <div className={`p-2 hover:bg-[#fff9] ${isActive ? "bg-white " : ""} flex items-center gap-2`}>
+            <div className={`p-2 hover:bg-[#fff9] ${isActive ? "bg-white " : ""} flex items-center gap-2`} role="menuitem" tabIndex="0">
                 <div className={`w-1 h-5 ${isActive ? "bg-[#1160b7] rounded" : ""}`} />
                 <div className='flex items-center gap-4'>
                     {children}
@@ -44,29 +44,29 @@ const Sidebar = ({ showLabels, handleShowLabel, isSidebarOpen, ref }) => {
 
     return (
         <>
-            <div ref={ref} className={`h-[calc(100vh-56px)] ${showLabels ? "w-[50%] md:w-[15%]" : "w-[10%] md:w-[5%]"} border-r border-[#a6a6a6] bg-[#dfe2e8] fixed z-20 top-14 left-0 pt-3 flex-col transition-all duration-300 ease-in-out ${isSidebarOpen ? "flex" : "hidden"} md:flex`}>
-                <div onClick={handleShowLabel} className='px-4 cursor-pointer md:block hidden'><Menu /></div>
+            <nav ref={ref} className={`h-[calc(100vh-56px)] ${showLabels ? "w-[50%] md:w-[15%]" : "w-[10%] md:w-[5%]"} border-r border-[#a6a6a6] bg-[#dfe2e8] fixed z-20 top-14 left-0 pt-3 flex-col transition-all duration-300 ease-in-out ${isSidebarOpen ? "flex" : "hidden"} md:flex`} aria-label="Sidebar">
+                <button onClick={handleShowLabel} className='px-4 cursor-pointer md:block hidden' aria-label="Toggle Sidebar Labels"><Menu /></button>
                 <div className='flex flex-col gap-8 mt-4 sidebar-links h-[88%] border-b border-[#a6a6a6]'>
                     <div className=''>
                         <SidebarItem url="/">
                             <Home className='w-4 h-4 text-[#3b3b3b]' />
                             {showLabels && <span className='text-sm text-[#3b3b3b]'>Home</span>}
                         </SidebarItem>
-                        <div className='flex items-center justify-between px-4 py-2 hover:bg-[#fff9] cursor-pointer mt-1'>
+                        <div className='flex items-center justify-between px-4 py-2 hover:bg-[#fff9] cursor-pointer mt-1' role="menuitem" tabIndex="0">
                             <div className='flex items-center gap-4 pl-1'>
                                 <Clock3 className='w-4 h-4 text-[#3b3b3b]' />
                                 {showLabels && <span className='text-sm text-[#3b3b3b]'>Recent</span>}
                             </div>
                             {showLabels && <ChevronDown className='w-4 h-4 text-[#3b3b3b]' />}
                         </div>
-                        <div className='flex items-center justify-between px-4 py-2 hover:bg-[#fff9] cursor-pointer mt-1'>
+                        <div className='flex items-center justify-between px-4 py-2 hover:bg-[#fff9] cursor-pointer mt-1' role="menuitem" tabIndex="0">
                             <div className='flex items-center gap-4 pl-1'>
                                 <Pin className='w-4 h-4 text-[#3b3b3b]' />
                                 {showLabels && <span className='text-sm text-[#3b3b3b]'>Pinned</span>}
                             </div>
                             {showLabels && <ChevronDown className='w-4 h-4 text-[#3b3b3b]' />}
                         </div>
-                        <div onClick={handleAgentModal} className='flex items-center justify-between px-4 py-2 hover:bg-[#fff9] cursor-pointer mt-1'>
+                        <div onClick={handleAgentModal} className='flex items-center justify-between px-4 py-2 hover:bg-[#fff9] cursor-pointer mt-1' role="menuitem" tabIndex="0">
                             <div className='flex items-center gap-4 pl-1'>
                                 <BrainCog className='w-4 h-4 text-[#3b3b3b]' />
                                 {showLabels && <span className='text-sm text-[#3b3b3b]'>Agent skill</span>}
@@ -198,7 +198,7 @@ const Sidebar = ({ showLabels, handleShowLabel, isSidebarOpen, ref }) => {
                         </div>
                     }
                 </div>
-            </div>
+            </nav>
             {showAgent && <AgentModal onClose={handleAgentModal} />}
         </>
     )

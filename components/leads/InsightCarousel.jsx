@@ -27,7 +27,7 @@ const InsightCarousel = () => {
     };
 
     return (
-        <div className='flex flex-col md:w-[65%] w-full md:pr-4 md:border-r'>
+        <section className='flex flex-col md:w-[65%] w-full md:pr-4 md:border-r'>
             <p className="text-gray-600 font-medium mb-4">
                 Copilot has pinpointed 20 key leads that show strong purchase intent and are actively engaging. These leads need your focus.
             </p>
@@ -38,7 +38,7 @@ const InsightCarousel = () => {
                 ))}
             </div>
 
-        </div>
+        </section>
     );
 };
 

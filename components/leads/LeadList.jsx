@@ -28,12 +28,17 @@ export default function LeadsList() {
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="px-2 py-1 border-none focus:outline-none rounded w-full text-sm text-[#707070]"
+                        aria-label="Search leads"
                     />
                     <Copilot className="w-4 h-4 absolute top-1/2 right-4 -translate-y-[50%]" />
                 </div>
                 <div className="flex items-center gap-2">
-                    <span title="Show list view"><List onClick={() => setViewMode("list")} className={`w-6 h-6 ${viewMode === "list" ? "text-blue-600" : "text-gray-600 cursor-pointer hover:text-blue-300"}`} /></span>
-                    <span title="Show grid view"><Grip onClick={() => setViewMode("grid")} className={`w-6 h-6 ${viewMode === "grid" ? "text-blue-600" : "text-gray-600 cursor-pointer hover:text-blue-300"}`} /></span>
+                    <button title="Show list view" aria-label="Show list view" onClick={() => setViewMode("list")}>
+                        <List className={`w-6 h-6 ${viewMode === "list" ? "text-blue-600" : "text-gray-600 cursor-pointer hover:text-blue-300"}`} />
+                    </button>
+                    <button title="Show grid view" aria-label="Show grid view" onClick={() => setViewMode("grid")}>
+                        <Grip className={`w-6 h-6 ${viewMode === "grid" ? "text-blue-600" : "text-gray-600 cursor-pointer hover:text-blue-300"}`} />
+                    </button>
                 </div>
             </div>
             {hasResults ? (
@@ -44,9 +49,12 @@ export default function LeadsList() {
                                 key={lead.id}
                                 className="border border-gray-300 rounded-lg p-4 hover:bg-gray-100 cursor-pointer"
                                 onClick={() => setSelectedLead(lead)}
+                                tabIndex="0"
+                                role="button"
+                                aria-pressed="false"
                             >
                                 <div className="flex items-center gap-2 mb-2">
-                                    <div className='w-8 h-8 p-1 bg-white rounded-full border'>
+                                    <div className='w-8 h-8 p-1 bg-white rounded-full border' title="User">
                                         <User2 className='w-full h-full text-gray-600' />
                                     </div>
                                     <h2 className="font-bold text-lg">{lead.name}</h2>
@@ -72,6 +80,9 @@ export default function LeadsList() {
                                         key={lead.id}
                                         className="hover:bg-gray-200 cursor-pointer border-b border-gray-300 text-[#707070] text-sm"
                                         onClick={() => setSelectedLead(lead)}
+                                        tabIndex="0"
+                                        role="button"
+                                        aria-pressed="false"
                                     >
                                         <td className="w-[25%] p-2 truncate text-blue-600">{lead.name}</td>
                                         <td className="w-[25%] p-2"><div className="truncate w-full">{lead.topic}</div></td>

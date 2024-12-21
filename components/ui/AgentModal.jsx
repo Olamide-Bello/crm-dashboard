@@ -23,16 +23,18 @@ export function AgentModal({ onClose }) {
     }
 
     return (
-        <div onClick={handleBgClick} className="fixed z-40 inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+        <div onClick={handleBgClick} className="fixed z-40 inset-0 bg-black bg-opacity-20 flex items-center justify-center" role="dialog" aria-modal="true">
             <div className="bg-white rounded-lg p-6 w-full max-w-3xl shadow-lg relative">
                 <button
                     onClick={onClose}
                     className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
+                    title="Close Modal"
+                    aria-label="Close Modal"
                 >
                     &times;
                 </button>
                 <div className="flex items-center gap-2">
-                    <Copilot className="w-6 h-6" />
+                    <Copilot className="w-6 h-6" title="Copilot" />
                     <p className="text-base font-bold">Agent skill</p>
                 </div>
                 <div className="bg-white shadow-md p-4 rounded-lg border my-4">
@@ -50,7 +52,7 @@ export function AgentModal({ onClose }) {
                 </div>
                 <div className="flex flex-col mb-4">
                     <div className="flex items-center gap-2">
-                        <Outlook className="w-6 h-6" />
+                        <Outlook className="w-6 h-6" title="Outlook" />
                         <p className="text-base font-bold">Enable email access</p>
                     </div>
                     <p>Allow agents to access email inboxes to read mails from known vendors</p>
@@ -63,10 +65,14 @@ export function AgentModal({ onClose }) {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         disabled={!isEmailAccessEnabled}
+                        title="Email Address"
+                        aria-label="Email Address"
                     />
                     <button
                         onClick={handleAllowAccess}
                         className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                        title="Allow Access"
+                        aria-label="Allow Access"
                     >
                         Allow access
                     </button>
@@ -75,12 +81,16 @@ export function AgentModal({ onClose }) {
                     <button
                         onClick={handleAllowAccess}
                         className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                        title="Activate"
+                        aria-label="Activate"
                     >
                         Activate
                     </button>
                     <button
                         onClick={onClose}
                         className="px-4 py-2 bg-transparent rounded-md border text-gray-700 hover:bg-gray-400"
+                        title="Close"
+                        aria-label="Close"
                     >
                         Close
                     </button>

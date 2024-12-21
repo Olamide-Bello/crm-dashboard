@@ -14,60 +14,60 @@ const MobileHeader = () => {
     }
 
     return (
-        <div className='flex items-center bg-[#dfe2e8] px-3 py-2 justify-between md:hidden'>
+        <header className='flex items-center bg-[#dfe2e8] px-3 py-2 justify-between md:hidden'>
             <div className='flex items-center gap-1 text-[#3e3d3d]'>
                 <p className='text-sm font-bold'>My open leads</p>
                 <ChevronDown className='w-4 h-4 ' />
             </div>
             <div className='relative'>
-                <div ref={triggerRef} className='flex items-center gap-1 text-[#3e3d3d] cursor-pointer' onClick={toggleDropdown}>
+                <button ref={triggerRef} className='flex items-center gap-1 text-[#3e3d3d] cursor-pointer' onClick={toggleDropdown} aria-expanded={showDropdown} aria-haspopup="true">
                     <p className='text-sm font-bold'>All actions</p>
                     <ChevronDown className='w-4 h-4 ' />
-                </div>
+                </button>
                 {showDropdown && (
-                    <div ref={dropdownRef} className='absolute top-full right-0 w-fit bg-white shadow-md rounded mt-1 z-10'>
+                    <div ref={dropdownRef} className='absolute top-full right-0 w-fit bg-white shadow-md rounded mt-1 z-10' role="menu">
                         <div className='flex flex-col py-2 px-4 gap-2'>
-                            <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Show leads chart'>
+                            <button className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Show leads chart' aria-label='Show leads chart'>
                                 <ChartLine className='w-4 h-4 text-[#707070]' />
                                 <span className='font-medium text-sm text-[#707070]'>Show chart</span>
-                            </div>
-                            <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Display focused view'>
+                            </button>
+                            <button className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Display focused view' aria-label='Display focused view'>
                                 <List className='w-4 h-4 text-[#707070]' />
                                 <span className='font-medium text-sm text-[#707070]'>Focused view</span>
-                            </div>
-                            <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Add a new lead'>
+                            </button>
+                            <button className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Add a new lead' aria-label='Add a new lead'>
                                 <Plus className='w-4 h-4 text-[#707070]' />
                                 <span className='font-medium text-sm text-[#707070]'>New</span>
-                            </div>
-                            <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Refresh leads list'>
+                            </button>
+                            <button className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Refresh leads list' aria-label='Refresh leads list'>
                                 <RotateCw className='w-4 h-4 text-[#707070]' />
                                 <span className='font-medium text-sm text-[#707070]'>Refresh</span>
-                            </div>
-                            <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='See collaborations'>
+                            </button>
+                            <button className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='See collaborations' aria-label='See collaborations'>
                                 <UsersRound className='w-4 h-4 text-[#707070]' />
                                 <span className='font-medium text-sm text-[#707070]'>Collaboration</span>
-                            </div>
-                            <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Delete leads list'>
+                            </button>
+                            <button className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Delete leads list' aria-label='Delete leads list'>
                                 <Trash2 className='w-4 h-4 text-[#707070]' />
                                 <span className='font-medium text-sm text-[#707070]'>Delete</span>
-                            </div>
-                            <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Smart data'>
+                            </button>
+                            <button className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Smart data' aria-label='Smart data'>
                                 <ChartPie className='w-4 h-4 text-[#707070]' />
                                 <span className='font-medium text-sm text-[#707070]'>Smart data</span>
-                            </div>
-                            <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Edit filters'>
+                            </button>
+                            <button className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Edit filters' aria-label='Edit filters'>
                                 <ListFilter className='w-4 h-4 text-[#707070]' />
                                 <span className='font-medium text-sm text-[#707070]'>Edit filters</span>
-                            </div>
-                            <div className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Edit columns'>
+                            </button>
+                            <button className='flex items-center gap-1 cursor-pointer hover:bg-gray-100 p-1 rounded' title='Edit columns' aria-label='Edit columns'>
                                 <Columns3 className='w-4 h-4 text-[#707070]' />
                                 <span className='font-medium text-sm text-[#707070]'>Edit columns</span>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 )}
             </div>
-        </div>
+        </header>
     )
 }
 

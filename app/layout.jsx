@@ -39,9 +39,9 @@ export default function RootLayout({ children }) {
         <MobileHeader />
         <div className="flex-1 relative bg-[#dfe2e8]">
           <Sidebar showLabels={showLabels} handleShowLabel={handleShowLabel} isSidebarOpen={isSidebarOpen} handleSidebarToggle={handleSidebarToggle} ref={dropdownRef} />
-          <div className={`${showLabels ? "ml-0 md:ml-[15%]" : "ml-0 md:ml-[5%]"} bg-[#e7e9e7] h-full`}>
+          <main className={`${showLabels ? "ml-0 md:ml-[15%]" : "ml-0 md:ml-[5%]"} bg-[#e7e9e7] h-full`}>
             {children}
-          </div>
+          </main>
         </div>
       </body>
     </html>

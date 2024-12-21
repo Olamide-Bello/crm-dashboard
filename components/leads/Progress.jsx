@@ -51,7 +51,7 @@ const Progress = ({ userName, progress, goal, metrics, lead, totalLead }) => {
                     ></div>
 
                 </div>
-                <div className="flex items-center gap-3 text-xs text-gray-500 mt-2 wrap">
+                <div className="flex items-center gap-3 text-xs text-gray-500 mt-2 flex-wrap">
                     {metrics.map((metric, index) => (
                         <div key={index} className='flex items-center gap-2'>
                             <div className={`h-2 w-2 rounded-full ${colors[index % colors.length]}`}></div>

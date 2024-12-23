@@ -36,6 +36,7 @@ export const leads = [
         ],
         potentialValue: "1M",
         intent: "High",
+        decisionMaker: true,
         about:
             "Jane Reyes, the Chief Operating Officer of Northwind Traders, is a dynamic leader with a proven track record in optimizing operations and enhancing customer experiences.",
         createdOn: "2024-04-02 12:00 PM",
@@ -54,6 +55,7 @@ export const leads = [
         ],
         potentialValue: "500K",
         intent: "Medium",
+        decisionMaker: false,
         about:
             "Winford Asher leads the procurement team at Contoso Ltd, specializing in strategic sourcing for office and hospitality solutions.",
         createdOn: "2024-03-30 7:45 AM",
@@ -72,6 +74,7 @@ export const leads = [
         ],
         potentialValue: "750K",
         intent: "High",
+        decisionMaker: true,
         about:
             "Josia Love oversees operational efficiency at Tailspin Toys, focusing on maintaining a high standard of service for all store locations.",
         createdOn: "2024-03-28 3:30 PM",
@@ -90,6 +93,7 @@ export const leads = [
         ],
         potentialValue: "300K",
         intent: "Low",
+        decisionMaker: false,
         about:
             "Harrison Curtis manages technical operations for Adventure Works, focusing on ensuring all machinery runs optimally.",
         createdOn: "2024-03-25 11:05 AM",
@@ -108,6 +112,7 @@ export const leads = [
         ],
         potentialValue: "850K",
         intent: "Medium",
+        decisionMaker: true,
         about:
             "Halle Griffiths leads the sales initiatives at Litware Inc, focusing on new business growth and client satisfaction.",
         createdOn: "2024-03-23 4:50 PM",

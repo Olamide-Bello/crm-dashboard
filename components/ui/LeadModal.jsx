@@ -77,7 +77,7 @@ export function Modal({ lead, onClose }) {
                                     <CircleCheckBig className="w-12 h-12 text-[#9434a4]" fill="#673ab730" />
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Decision maker</p>
-                                        <p className="text-lg font-bold text-[#9434a4]">Yes</p>
+                                        <p className="text-lg font-bold text-[#9434a4]">{lead.decisionMaker ? "Yes" : "No"}</p>
                                     </div>
                                 </div>
                                 <div className="px-3 py-2 bg-white rounded-lg border shadow-md flex items-center gap-2" title="Potential Deal Value">

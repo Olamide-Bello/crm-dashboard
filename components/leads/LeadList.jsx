@@ -9,6 +9,7 @@ export default function LeadsList() {
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedLead, setSelectedLead] = useState(null);
     const [viewMode, setViewMode] = useState("list");
+    const [hoveredLead, setHoveredLead] = useState(null);
 
     const filteredLeads = leads.filter(
         (lead) =>
@@ -47,8 +48,10 @@ export default function LeadsList() {
                         {filteredLeads.map((lead) => (
                             <div
                                 key={lead.id}
-                                className="border border-gray-300 rounded-lg p-4 hover:bg-gray-100 cursor-pointer"
+                                className="border border-gray-300 rounded-lg p-4 hover:bg-gray-100 cursor-pointer relative"
                                 onClick={() => setSelectedLead(lead)}
+                                onMouseEnter={() => setHoveredLead(lead)}
+                                onMouseLeave={() => setHoveredLead(null)}
                                 tabIndex="0"
                                 role="button"
                                 aria-pressed="false"
@@ -61,10 +64,16 @@ export default function LeadsList() {
                                 </div>
                                 <p className="text-gray-700 mb-1">{lead.topic}</p>
                                 <p className="text-gray-500 text-sm">{lead.createdOn}</p>
+                                {hoveredLead === lead && (
+                                    <span className="absolute top-0 right-0 z-20 bg-white shadow-lg p-2 rounded-lg text-sm text-gray-700">
+                                        <span>Deal Value: ${lead.potentialValue}</span><br/>
+                                        <span>Decision Maker: {lead.decisionMaker ? "Yes" : "No"}</span>
+                                    </span>
+                                )}
                             </div>
                         ))}
                     </div>
-                    <div className={`w-full overflow-x-auto ${viewMode === "grid" ? "hidden" : "block"}`}>
+                    <div className={`w-full pb-10 overflow-y-visible overflow-x-auto ${viewMode === "grid" ? "hidden" : "block"}`}>
                         <table className="table-auto min-w-[768px] border-collapse border-none">
                             <thead>
                                 <tr className="border-b border-gray-300 text-left">
@@ -78,8 +87,10 @@ export default function LeadsList() {
                                 {filteredLeads.map((lead) => (
                                     <tr
                                         key={lead.id}
-                                        className="hover:bg-gray-200 cursor-pointer border-b border-gray-300 text-[#707070] text-sm"
+                                        className="hover:bg-gray-200 cursor-pointer border-b border-gray-300 text-[#707070] text-sm relative"
                                         onClick={() => setSelectedLead(lead)}
+                                        onMouseEnter={() => setHoveredLead(lead)}
+                                        onMouseLeave={() => setHoveredLead(null)}
                                         tabIndex="0"
                                         role="button"
                                         aria-pressed="false"
@@ -88,6 +99,12 @@ export default function LeadsList() {
                                         <td className="w-[25%] p-2"><div className="truncate w-full">{lead.topic}</div></td>
                                         <td className="w-[25%] p-2">New</td>
                                         <td className="w-[25%] p-2">{lead.createdOn}</td>
+                                        {hoveredLead === lead && (
+                                            <span className="absolute top-0 right-0 z-20 bg-white shadow-lg p-2 rounded-lg text-sm text-gray-700">
+                                                <span>Deal Value: ${lead.potentialValue}</span><br/>
+                                                <span>Decision Maker: {lead.decisionMaker ? "Yes" : "No"}</span>
+                                            </span>
+                                        )}
                                     </tr>
                                 ))}
                             </tbody>
